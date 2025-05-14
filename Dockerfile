@@ -5,10 +5,6 @@ FROM php:8.2-apache
 RUN apt-get update && \
     apt-get install -y libcurl4-openssl-dev pkg-config libssl-dev zlib1g-dev
 
-# 3. ثبّت امتداد HTTP من PECL
-RUN pecl install pecl_http && \
-    docker-php-ext-enable http
-
 # 4. ثبّت امتدادات PDO لقاعدة البيانات (مثال MySQL)
 RUN docker-php-ext-install pdo_mysql
 
